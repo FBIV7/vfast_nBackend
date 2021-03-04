@@ -19,6 +19,7 @@ const package = require("./routes/package");
 const cases = require("./routes/case");
 const cdfForm = require("./routes/cdfForm");
 const vendor = require("./routes/vendor")
+const client = require("./routes/client")
 
 
 
@@ -42,6 +43,7 @@ app.use("/api/v1/package", package);
 app.use("/api/v1/case", cases);
 app.use("/api/v1/form", cdfForm);
 app.use("/api/v1/vendor",vendor)
+app.use("/api/v1/client",client)
 
 
 

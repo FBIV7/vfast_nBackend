@@ -101,3 +101,12 @@ exports.getAllAddress = asyncHandler(async (req, res, next) => {
     user,
   });
 });
+
+//get crm
+exports.getAllCRM = asyncHandler(async (req, res, next) => {
+  const user = await User.find({role:"CRM"}).select("-password");
+
+  res.status(200).json({
+    user,
+  });
+});

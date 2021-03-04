@@ -27,7 +27,8 @@ const UserSchema = new mongoose.Schema({
       "initiation",
       "CRM",
       "addressTL",
-      "address"
+      "address",
+      "clientRegistration"
     ],
     default: "client",
   },

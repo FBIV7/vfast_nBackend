@@ -44,7 +44,18 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+},
+{
+  toJSON: { virtuals: true },
+  toObject: { virtuals: true },
 });
+
+UserSchema.virtual("client",{
+  ref:"Client",
+  localField:"_id",
+  foreignField:"CRM",
+  justOne : false
+})
 
 //Encrypt password using bcrypt
 UserSchema.pre("save", async function (next) {

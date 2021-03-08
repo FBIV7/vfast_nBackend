@@ -19,7 +19,7 @@ exports.register = asyncHandler(async (req, res, next) => {
 //get cases
 exports.getCases = asyncHandler(async (req, res, next) => {
   
-  const cases = await  Case.find({status:req.query.status});
+  const cases = await  Case.find({status:req.query.status}).populate("clientName");
 
   res.status(200).json({
     sucess: true,

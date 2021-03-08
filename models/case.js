@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const CaseSchema = mongoose.Schema({
-  clientName: { type: String },
+  clientName: { type: Schema.Types.ObjectId, ref: "Client"  },
   candidateName: { type: String },
   pack: { type: Schema.Types.ObjectId, ref: "Package" },
   status: {
